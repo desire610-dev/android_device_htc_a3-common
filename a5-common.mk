@@ -199,7 +199,8 @@ PRODUCT_COPY_FILES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
+    com.android.future.usb.accessory \
+    LatinIme
 
 # for android_filesystem_config.h
 PRODUCT_PACKAGES += \
