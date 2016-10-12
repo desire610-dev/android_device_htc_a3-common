@@ -20,7 +20,7 @@
 # definition file).
 #
 
-LOCAL_PATH := device/htc/a5-common
+LOCAL_PATH := device/htc/a3-common
 
 BOARD_VENDOR := htc
 
@@ -42,14 +42,14 @@ TARGET_CPU_VARIANT := krait
 
 # Kernel
 BOARD_DTBTOOL_ARGS := --dt-tag "htc,project-id = <"
-BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache
+BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache androidboot.selinux=permissiv
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 TARGET_KERNEL_SOURCE := kernel/htc/msm8974
-TARGET_KERNEL_CONFIG := cm_a5_defconfig
+TARGET_KERNEL_CONFIG := cm_a3_defconfig
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
@@ -138,19 +138,19 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USES_MMCUTILS := true
-TARGET_RECOVERY_DEVICE_DIRS += device/htc/a5-common
+TARGET_RECOVERY_DEVICE_DIRS += device/htc/a3-common
 TARGET_RECOVERY_DEVICE_MODULES += chargeled
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/htc/a5-common/sepolicy
+BOARD_SEPOLICY_DIRS += device/htc/a3-common/sepolicy
 
 # Hardware
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += \
-    device/htc/a5-common/cmhw \
+    device/htc/a3-common/cmhw \
     hardware/cyanogen/cmhw
 
 # inherit from the proprietary version
--include vendor/htc/a5-common/BoardConfigVendor.mk
+-include vendor/htc/a3-common/BoardConfigVendor.mk
