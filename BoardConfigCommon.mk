@@ -146,11 +146,5 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/htc/a3-common/sepolicy
 
-# Hardware
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += \
-    device/htc/a3-common/cmhw \
-    hardware/cyanogen/cmhw
-
 # inherit from the proprietary version
 -include vendor/htc/a3-common/BoardConfigVendor.mk
