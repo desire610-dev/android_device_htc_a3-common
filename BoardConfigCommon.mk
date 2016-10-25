@@ -159,6 +159,9 @@ TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
 TARGET_RIL_VARIANT := 
 #mickybart - merged
 
+# SecComp
+BOARD_SECCOMP_POLICY := device/htc/a5-common/seccomp
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/htc/a5-common/sepolicy
