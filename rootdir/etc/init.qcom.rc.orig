@@ -31,21 +31,26 @@ import init.qcom.usb.rc
 import init.variant.rc
 
 on early-init
-    mount debugfs debugfs /sys/kernel/debug
-    chmod 0755 /sys/kernel/debug
-
-    chown system system /sys/kernel/debug/kgsl/proc
     write /sys/block/mmcblk0/queue/scheduler noop
     write /sys/block/mmcblk0/bdi/read_ahead_kb 512
     write /sys/block/mmcblk1/bdi/read_ahead_kb 512
+    mount debugfs debugfs /sys/kernel/debug
+
+    chmod 0755 /sys/kernel/debug
 
 on init
-    export LD_SHIM_LIBS "/system/lib/liblog.so|libshim_log.so:/system/lib/hw/camera.msm8226.so|/system/lib/libshim_camera.so"
+<<<<<<< HEAD
+    export LD_SHIM_LIBS /system/lib/liblog.so|libshim_log.so
+#:/system/lib/libwilhelm.so|libshim_audio.so
+=======
+    export LD_SHIM_LIBS "/system/lib/liblog.so|libshim_log.so:/system/lib/hw/camera.vendor.msm8974.so|/system/lib/libshim_camera.so"
+>>>>>>> e8c18ca... msm8974: Add GraphicBuffer shim for camera hal
 
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
     # Support legacy paths
+    symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
     # for AKM8963
@@ -85,10 +90,6 @@ on init
     chmod 0220 /sys/class/power_supply/battery/disable_limit_chg
 # HTC SSD Battery - END
 
-    # permissions for NFC
-    chown nfc nfc /sys/class/NFC_sensor/comn/nxp_uicc_swp
-    chmod 0664 /sys/class/NFC_sensor/comn/nxp_uicc_swp
-
 # Vibrator permission
     chown system /sys/devices/virtual/timed_output/vibrator/pwm_value_1p
     restorecon /sys/devices/virtual/timed_output/vibrator/pwm_value_1p
@@ -123,9 +124,6 @@ on post-fs-data
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
 
-    # Radio permissions
-    mkdir /dev/radio 0770 radio radio
-
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
 
     # Create the directories used by the Wireless subsystem
@@ -153,10 +151,6 @@ on post-fs-data
     chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.3/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.4/polling
-
-    # NFC local data and nfcee xml storage
-    mkdir /data/nfc 0770 nfc nfc
-    mkdir /data/nfc/param 0770 nfc nfc
 
     #Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
     mkdir /data/system 0775 system system
@@ -214,6 +208,10 @@ on early-boot
 
 on boot
     chmod 0644 /proc/cmdline
+
+    # NFC
+    mkdir /data/nfc 0770 nfc nfc
+    mkdir /data/nfc/param 0770 nfc nfc
 
     # bluetooth
     chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set

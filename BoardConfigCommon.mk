@@ -55,8 +55,10 @@ TARGET_KERNEL_CONFIG := cm_a5_defconfig
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
+ifneq (eng,$(TARGET_BUILD_VARIANT))
 WITH_DEXPREOPT := true
 DONT_DEXPREOPT_PREBUILTS := true
+endif
 endif
 
 # QCOM hardware
@@ -174,6 +176,9 @@ BOARD_HARDWARE_CLASS += \
 
 #TWRP
 TW_THEME := portrait_hdpi
+
+# SDClang
+TARGET_USE_SDCLANG := true
 
 # inherit from the proprietary version
 -include vendor/htc/a5-common/BoardConfigVendor.mk

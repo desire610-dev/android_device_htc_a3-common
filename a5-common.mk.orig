@@ -97,6 +97,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
+<<<<<<< HEAD:a5-common.mk
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
@@ -106,16 +107,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     make_ext4fs \
     setup_fs
+=======
+# Camera shim
+PRODUCT_PACKAGES += \
+    libshim_camera
+>>>>>>> e8c18ca... msm8974: Add GraphicBuffer shim for camera hal:msm8974-common.mk
 
 # FM Radio
 PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
-# HTC logging symbols, camera shim
+# HTC logging symbols
 PRODUCT_PACKAGES += \
-    libshim_log \
-    libshim_camera
+    libshim_log
 
 # GPS
 PRODUCT_COPY_FILES += \

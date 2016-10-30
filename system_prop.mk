@@ -103,8 +103,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Legacy omx decoder support
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.less-secure=true \
-    media.stagefright.legacyencoder=true \
-    persist.camera.HAL3.enabled=0 \
-    camera2.portability.force_api=1 
-
+    media.stagefright.legacyencoder=true 
 
