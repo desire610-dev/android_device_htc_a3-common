@@ -157,8 +157,7 @@ TARGET_NO_SENSOR_PERMISSION_CHECK := true
 TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
 
 # RIL
-TARGET_RIL_VARIANT := 
-#mickybart - merged
+TARGET_RIL_VARIANT := mickybart
 
 # SecComp
 BOARD_SECCOMP_POLICY := device/htc/a5-common/seccomp
@@ -172,6 +171,9 @@ BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += \
     device/htc/a5-common/cmhw \
     hardware/cyanogen/cmhw
+
+#TWRP
+TW_THEME := portrait_hdpi
 
 # inherit from the proprietary version
 -include vendor/htc/a5-common/BoardConfigVendor.mk

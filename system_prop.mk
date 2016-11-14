@@ -11,19 +11,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.use_data_netmgrd=true \
     persist.data.netmgrd.qos.enable=true \
     persist.radio.apm_sim_not_pwdn=1 \
+    persist.rild.nitz_plmn="" \
+    persist.rild.nitz_long_ons_0="" \
+    persist.rild.nitz_long_ons_1="" \
+    persist.rild.nitz_long_ons_2="" \
+    persist.rild.nitz_long_ons_3="" \
+    persist.rild.nitz_short_ons_0="" \
+    persist.rild.nitz_short_ons_1="" \
+    persist.rild.nitz_short_ons_2="" \
+    persist.rild.nitz_short_ons_3="" \
     DEVICE_PROVISIONED=1
-#    persist.rild.nitz_plmn="" \
-#    persist.rild.nitz_long_ons_0="" \
-#    persist.rild.nitz_long_ons_1="" \
-#    persist.rild.nitz_long_ons_2="" \
-#    persist.rild.nitz_long_ons_3="" \
-#    persist.rild.nitz_short_ons_0="" \
-#    persist.rild.nitz_short_ons_1="" \
-#    persist.rild.nitz_short_ons_2="" \
-#    persist.rild.nitz_short_ons_3="" \
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.ril.force_eri_from_xml=true \
-    persist.radio.mode_pref_nv10=1 \
+
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.ril.force_eri_from_xml=true \
+#    persist.radio.mode_pref_nv10=1 \
     ro.telephony.get_imsi_from_sim=true
 
 # Allow tethering without provisioning app
