@@ -37,7 +37,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.thermal.monitor=true \
     ro.qc.sdk.sensors.gestures=true \
     ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so \
-    qcom.bluetooth.soc=smd \
     qcom.hw.aac.encoder=true
 
 # Audio
