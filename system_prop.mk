@@ -25,7 +25,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #PRODUCT_PROPERTY_OVERRIDES += \
 #    ro.ril.force_eri_from_xml=true \
 #    persist.radio.mode_pref_nv10=1 \
-    ro.telephony.get_imsi_from_sim=true
+#    ro.telephony.get_imsi_from_sim=true
 
 # Allow tethering without provisioning app
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -105,3 +105,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.less-secure=true \
     media.stagefright.legacyencoder=true 
 
+# Bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
+    qcom.bluetooth.soc=smd
