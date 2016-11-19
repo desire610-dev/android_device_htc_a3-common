@@ -22,10 +22,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_3="" \
     DEVICE_PROVISIONED=1
 
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    ro.ril.force_eri_from_xml=true \
-#    persist.radio.mode_pref_nv10=1 \
-#    ro.telephony.get_imsi_from_sim=true
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ril.force_eri_from_xml=true \
+    persist.radio.mode_pref_nv10=1 \
+    ro.telephony.get_imsi_from_sim=true
 
 # Allow tethering without provisioning app
 PRODUCT_PROPERTY_OVERRIDES += \
