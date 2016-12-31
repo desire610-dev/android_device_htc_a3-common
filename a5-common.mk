@@ -52,6 +52,10 @@ PRODUCT_PACKAGES += \
     init.qcom.bt.sh \
     init.qcom.ril.sh
 
+# BT
+PRODUCT_PACKAGES += \
+    libbt-vendor
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
