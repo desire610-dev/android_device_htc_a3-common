@@ -15,7 +15,7 @@ function extract() {
             mkdir -p $2/$DIR
         fi
         if [ "$SRC" = "adb" ]; then
-            # Try CM target first
+            # Try LINEAGE target first
             adb pull /system/$DEST $2/$DEST
             # if file does not exist try OEM target
             if [ "$?" != "0" ]; then

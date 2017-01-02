@@ -51,7 +51,7 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-5.3/bin
 TARGET_TOOLCHAIN_ROOT := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-5.3/bin
 TARGET_KERNEL_SOURCE := kernel/htc/msm8974
-TARGET_KERNEL_CONFIG := cm_a5_defconfig
+TARGET_KERNEL_CONFIG := lineage_a5_defconfig
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
