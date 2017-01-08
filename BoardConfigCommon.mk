@@ -20,7 +20,7 @@
 # definition file).
 #
 
-LOCAL_PATH := device/htc/a5-common
+LOCAL_PATH := device/htc/a3-common
 
 BOARD_VENDOR := htc
 
@@ -51,7 +51,7 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-5.3/bin
 TARGET_TOOLCHAIN_ROOT := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-5.3/bin
 TARGET_KERNEL_SOURCE := kernel/htc/msm8974
-TARGET_KERNEL_CONFIG := lineage_a5_defconfig
+TARGET_KERNEL_CONFIG := mokee_a3_defconfig
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
@@ -147,7 +147,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USES_MMCUTILS := true
-TARGET_RECOVERY_DEVICE_DIRS += device/htc/a5-common
+TARGET_RECOVERY_DEVICE_DIRS += device/htc/a3-common
 TARGET_RECOVERY_DEVICE_MODULES += chargeled
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
@@ -168,17 +168,17 @@ TARGET_RIL_VARIANT := caf
 TARGET_NEEDS_GCC_LIBC := true
 
 # SecComp
-BOARD_SECCOMP_POLICY := device/htc/a5-common/seccomp
+BOARD_SECCOMP_POLICY := device/htc/a3-common/seccomp
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/htc/a5-common/sepolicy
+BOARD_SEPOLICY_DIRS += device/htc/a3-common/sepolicy
 
 # Hardware
-BOARD_USES_CYANOGEN_HARDWARE := true
+BOARD_USES_MOKEE_HARDWARE := true
 BOARD_HARDWARE_CLASS += \
-    device/htc/a5-common/cmhw \
-    hardware/cyanogen/cmhw
+    device/htc/a3-common/mkhw \
+    hardware/mokee/mkhw
 
 #TWRP
 TW_THEME := portrait_hdpi
@@ -187,4 +187,4 @@ TW_THEME := portrait_hdpi
 TARGET_USE_SDCLANG := true
 
 # inherit from the proprietary version
--include vendor/htc/a5-common/BoardConfigVendor.mk
+-include vendor/htc/a3-common/BoardConfigVendor.mk
